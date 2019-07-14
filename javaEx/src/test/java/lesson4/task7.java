@@ -19,7 +19,7 @@ public class task7 {
     }
 
     @Test
-    public void testForTask3(){
+    public void testForTask7(){
         driver.get("http://localhost/litecart/admin");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");

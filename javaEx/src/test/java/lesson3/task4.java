@@ -23,7 +23,7 @@ public class task4 {
     }
 
     @Test
-    public void testForTask3(){
+    public void testForTask4(){
         driver.get("http://www.google.com");
         driver.findElement(By.name("q")).sendKeys("webdriver");
         driver.findElement(By.name("btnK")).click();
