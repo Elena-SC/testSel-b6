@@ -32,15 +32,13 @@ public class task8 {
     }
 
     private void stickerFunction() {
-        String locatorNew = ".//div[@class='sticker new']";
-        String locatorSale  = ".//div[@class='sticker sale']";
         List <WebElement> productLists = driver.findElements(By.xpath(".//ul[@class='listing-wrapper products']"));
         for (WebElement productList: productLists) {
             List<WebElement> mostPopularItems = productList
                     .findElements(By.xpath(".//li[@class='product column shadow hover-light']"));
             for (WebElement mostPopularItem: mostPopularItems) {
-                Assert.assertTrue(isElementPresent(mostPopularItem.findElements(By.xpath(locatorNew)))||
-                        isElementPresent(mostPopularItem.findElements(By.xpath(locatorSale))));
+                Assert.assertTrue(isElementPresent(mostPopularItem
+                        .findElements(By.cssSelector("div[class^='sticker']"))));
             }
         }
     }
