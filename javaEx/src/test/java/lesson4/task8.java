@@ -43,6 +43,6 @@ public class task8 {
         }
     }
     private boolean isElementPresent(List <WebElement> element) {
-        return element.size() > 0;
+        return element.size() == 1;
     }
 }
