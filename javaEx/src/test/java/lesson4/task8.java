@@ -35,7 +35,7 @@ public class task8 {
         List <WebElement> productLists = driver.findElements(By.xpath(".//ul[@class='listing-wrapper products']"));
         for (WebElement productList: productLists) {
             List<WebElement> mostPopularItems = productList
-                    .findElements(By.xpath(".//li[@class='product column shadow hover-light']"));
+                    .findElements(By.cssSelector("li[class^='product']"));
             for (WebElement mostPopularItem: mostPopularItems) {
                 Assert.assertTrue(isElementPresent(mostPopularItem
                         .findElements(By.cssSelector("div[class^='sticker']"))));
