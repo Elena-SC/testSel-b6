@@ -32,15 +32,12 @@ public class task8 {
     }
 
     private void stickerFunction() {
-        List <WebElement> productLists = driver.findElements(By.xpath(".//ul[@class='listing-wrapper products']"));
-        for (WebElement productList: productLists) {
-            List<WebElement> mostPopularItems = productList
+            List<WebElement> mostPopularItems = driver
                     .findElements(By.cssSelector("li[class^='product']"));
             for (WebElement mostPopularItem: mostPopularItems) {
                 Assert.assertTrue(isElementPresent(mostPopularItem
                         .findElements(By.cssSelector("div[class^='sticker']"))));
             }
-        }
     }
     private boolean isElementPresent(List <WebElement> element) {
         return element.size() == 1;
