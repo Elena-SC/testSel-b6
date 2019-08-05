@@ -20,6 +20,7 @@ public class task13 {
     @Before
     public void start(){
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, 10);
     }
 
     @Test
@@ -69,11 +70,9 @@ public class task13 {
         if (driver.findElements(By.xpath(".//select[@name='options[Size]']")).size() > 0){
             driver.findElement(By.xpath(".//select[@name='options[Size]']/option[2]")).click();
             driver.findElement(By.xpath(".//button[@name='add_cart_product']")).click();
-            wait = new WebDriverWait(driver, 5);
         }
         else {
             driver.findElement(By.xpath(".//button[@name='add_cart_product']")).click();
-            wait = new WebDriverWait(driver, 5);
         }
     }
 
@@ -87,13 +86,11 @@ public class task13 {
     private void clickReturnHome(){
         driver.findElement(By.xpath(".//a[text()='Home']"))
                 .click();
-        wait = new WebDriverWait(driver, 5);
     }
 
     private void clickCheckout(){
         driver.findElement(By.xpath(".//a[text()='Checkout »']"))
                 .click();
-        wait = new WebDriverWait(driver, 5);
     }
 
     private void removeProductsFromTable(){
